@@ -18,6 +18,44 @@ function merchantApi() {
   }
 
   async function getShippingMethods(orderId) {
+    const { order, token } = await getOrderWithToken(orderId);
+
+    // set shipping cost and modify total cost in order
+    order["shipping_amount"] = shippingMethods[0].cost;
+    order["sub_total"] = order["items_total_amount"] + order["shipping_amount"];
+    order["total_amount"] = order["sub_total"] + order["tax_amount"];
+
+    return {
+      order: order,
+      token: token,
+      shipping_methods: shippingMethods,
+    };
+  }
+
+  async function setShippingMethod(orderId, codeMethod) {
+    const { order, token } = await getOrderWithToken(orderId);
+
+    //modify shipping cost according new shipping method
+    let newShippingCost = 0;
+    for (const method in shippingMethods) {
+      const code = shippingMethods[method].code;
+      if (code === codeMethod) {
+        newShippingCost = shippingMethods[method].cost;
+      }
+    }
+    order["shipping_amount"] = newShippingCost;
+    order["sub_total"] = order["items_total_amount"] + newShippingCost;
+    order["total_amount"] = order["sub_total"] + order["tax_amount"];
+
+    return {
+      order: order,
+      token: token,
+      shipping_methods: shippingMethods,
+    };
+  }
+
+  //get Order from Merchant API
+  async function getOrderWithToken(orderId) {
     //get token from DB
     let token = "";
     await Orders.once("value", (snapshot) => {
@@ -34,18 +72,7 @@ function merchantApi() {
     if (response.error) {
       throw new Error("Error internal");
     }
-    const order = response.order;
-
-    // set shipping Cost and modify total cost in order
-    order["shipping_amount"] = shippingMethods[0].cost;
-    order["sub_total"] = order["items_total_amount"] + order["shipping_amount"];
-    order["total_amount"] = order["sub_total"] + order["tax_amount"];
-
-    return {
-      order: order,
-      token: response.token,
-      shipping_methods: shippingMethods,
-    };
+    return response;
   }
 
   // Function to Request
@@ -76,6 +103,7 @@ function merchantApi() {
   return {
     getTokenizedOrder,
     getShippingMethods,
+    setShippingMethod,
   };
 }
 

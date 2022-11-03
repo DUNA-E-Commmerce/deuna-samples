@@ -35,6 +35,17 @@ app.post("/getShippingMethods/:orderId", (req, res) => {
     });
 });
 
+app.patch("/setShippingMethod/:orderId/:codeMethod", (req, res) => {
+  merchantApi
+    .setShippingMethod(req.params.orderId, req.params.codeMethod)
+    .then((orderWithShippingMethods) => {
+      response.success(req, res, orderWithShippingMethods, 200);
+    })
+    .catch((err) => {
+      response.error(req, res, err, 400);
+    });
+});
+
 app.listen(process.env.API_PORT, () => {
   console.log("Node server listening on the port:", process.env.API_PORT);
 });
