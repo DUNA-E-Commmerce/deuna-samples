@@ -46,6 +46,27 @@ app.patch("/setShippingMethod/:orderId/:codeMethod", (req, res) => {
     });
 });
 
+app.post("/applyCoupons/:orderId", (req, res) => {
+  merchantApi
+    .applyCoupon(req.params.orderId, req.body.coupon_code)
+    .then((orderWithToken) => {
+      response.success(req, res, orderWithToken, 200);
+    })
+    .catch((err) => {
+      response.error(req, res, err, 400);
+    });
+});
+
+app.delete("/removeCoupons/:orderId/code/:couponCode", (req, res) => {
+  merchantApi
+    .removeCoupon(req.params.orderId, req.params.couponCode)
+    .then((orderWithToken) => {
+      response.success(req, res, orderWithToken, 200);
+    })
+    .catch((err) => {
+      response.error(req, res, err, 400);
+    });
+});
 app.listen(process.env.API_PORT, () => {
   console.log("Node server listening on the port:", process.env.API_PORT);
 });

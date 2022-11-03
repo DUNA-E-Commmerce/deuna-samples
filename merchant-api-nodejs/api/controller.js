@@ -1,6 +1,7 @@
 const request = require("request");
 const Orders = require("../store/store");
 const shippingMethods = require("../mock/shippingMethods");
+const coupons = require("../mock/coupons");
 
 const URL_BASE = "https://staging-apigw.getduna.com"; // Merchant API
 
@@ -50,7 +51,50 @@ function merchantApi() {
     return {
       order: order,
       token: token,
-      shipping_methods: shippingMethods,
+    };
+  }
+
+  async function applyCoupon(orderId, couponCode) {
+    const { order, token } = await getOrderWithToken(orderId);
+
+    //validate coupon is available
+    const couponSelected = coupons.find((coupon) => coupon.code === couponCode);
+    if (!couponSelected) {
+      throw new Error("coupon not exist");
+    }
+
+    //apply  discount
+    order["sub_total"] = order["items_total_amount"] - couponSelected.amount;
+    order["total_amount"] =
+      order["sub_total"] + order["shipping_amount"] + order["tax_amount"];
+    //set coupon structure
+    order["discounts"] = couponSelected;
+
+    return {
+      order: order,
+      token: token,
+    };
+  }
+
+  async function removeCoupon(orderId, couponCode) {
+    const { order, token } = await getOrderWithToken(orderId);
+
+    //validate coupon is available
+    const couponSelected = coupons.find((coupon) => coupon.code === couponCode);
+    if (!couponSelected) {
+      throw new Error("coupon not exist");
+    }
+
+    //modify costs
+    order["sub_total"] = order["items_total_amount"] + couponSelected.amount;
+    order["total_amount"] =
+      order["sub_total"] + order["shipping_amount"] + order["tax_amount"];
+    //remove discounts
+    order["discounts"] = [];
+
+    return {
+      order: order,
+      token: token,
     };
   }
 
@@ -104,6 +148,8 @@ function merchantApi() {
     getTokenizedOrder,
     getShippingMethods,
     setShippingMethod,
+    applyCoupon,
+    removeCoupon,
   };
 }
 
