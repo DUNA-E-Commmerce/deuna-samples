@@ -1,4 +1,13 @@
 {
+  "name": "deuna-sample-api-merchant",
+  "version": "1.0.0",
+  "description": "Deuna api merchant sample",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "author": "stripe-samples",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
