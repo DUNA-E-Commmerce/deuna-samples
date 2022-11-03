@@ -1,7 +1,7 @@
 const request = require("request");
-const Orders = require("../store/store");
 const shippingMethods = require("../mock/shippingMethods");
 const coupons = require("../mock/coupons");
+const store = require("../store/db");
 
 const URL_BASE = "https://staging-apigw.getduna.com"; // Merchant API
 
@@ -11,7 +11,7 @@ function merchantApi() {
 
     const response = await req("POST", urlTokenizedOrder, orderPayload);
     //save data in DB
-    Orders.push({
+    store.push("orders", {
       token: response.token,
       orderId: response.order.order_id,
     });
@@ -101,15 +101,12 @@ function merchantApi() {
   //get Order from Merchant API
   async function getOrderWithToken(orderId) {
     //get token from DB
-    let token = "";
-    await Orders.once("value", (snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-        if (childSnapshot.val().orderId === orderId) {
-          token = childSnapshot.val().token;
-        }
-      });
-    });
-
+    const result = await store.get("orders", orderId);
+    console.log("result", result);
+    if (!result) {
+      throw new Error("Data not found");
+    }
+    const token = result.token;
     // get order from Merchant API
     const urlOrderWithToken = `${URL_BASE}/merchants/orders/${token}`;
     const response = await req("GET", urlOrderWithToken);
