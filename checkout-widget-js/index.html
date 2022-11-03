@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo</title>
+    <!--Add the script named Cross Domain Login -->
     <script src="https://cdn.getduna.com/cdl/index.js"></script>
-    <script src="https://cdn.getduna.com/checkout-widget/index.js"></script>
-    <script src="https://cdn.getduna.com/checkout-widget/index.js"></script>
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <!--Add the checkout-widget -->
+    <script src="https://cdn.stg.deuna.io/checkout-widget/v1.0.0/index.js"></script>
+    <!--Initialize and show checkout-widget -->
+    <script src="config.js"></script>
+    <script src="checkout-initialize.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -17,16 +22,16 @@
         <div class="cart-modal">
             <i id="close-btn" class="fas fa-times"></i>
             <h1 class="cart-is-empty">Cart is empty</h1>
-    
-            <div class="product-rows">
-            </div>
+
+            <div class="product-rows"></div>
             <div class="total is-flex is-justify-center is-align-center">
                 <h1 class="cart-total">TOTAL</h1>
                 <span class="total-price">$0</span>
             </div>
-                <button id="button-checkout-deuna" class="purchase-btn" onclick="shouldOpen()">
-                    <img src="https://images.getduna.com/logo-full-deuna-D.svg" alt=" DEUNA"> Checkout
-                </button>
+            <button id="button-checkout-deuna" class="purchase-btn" onclick="shouldOpen()">
+                <img src="https://images.getduna.com/logo-full-deuna-D.svg" alt=" DEUNA" />
+                Checkout
+            </button>
         </div>
     </div>
     <div class="cart-btn">
@@ -35,41 +40,32 @@
     </div>
     <div class="items-container">
         <div class="card-1 card">
-            <img class="product-image"
-                src="images/product-6.jpg"
-                alt="">
+            <img class="product-image" src="images/product-6.jpg" alt="" />
             <button class="add-to-cart">Add to cart</button>
             <span class="product-price">$1395</span>
         </div>
         <div class="card-2 card">
-            <img class="product-image"
-                src="images/product-2.jpg"
-                alt="">
+            <img class="product-image" src="images/product-2.jpg" alt="" />
             <button class="add-to-cart">Add to cart</button>
             <span class="product-price">$1175</span>
         </div>
         <div class="card-3 card">
-            <img class="product-image"
-                src="images/product-3.jpg"
-                alt="">
+            <img class="product-image" src="images/product-3.jpg" alt="" />
             <button class="add-to-cart">Add to cart</button>
             <span class="product-price">$1150</span>
         </div>
         <div class="card-4 card">
-            <img class="product-image"
-                src="images/product-4.jpg"
-                alt="">
+            <img class="product-image" src="images/product-4.jpg" alt="" />
             <button class="add-to-cart">Add to cart</button>
             <span class="product-price">$1575</span>
         </div>
         <div class="card-5 card">
-            <img class="product-image"
-                src="images/product-5.jpg"
-                alt="">
+            <img class="product-image" src="images/product-5.jpg" alt="" />
             <button class="add-to-cart">Add to cart</button>
             <span class="product-price">$1230</span>
         </div>
     </div>
-    </body>
-    <script src="shoppingCart.js"></script>
+</body>
+<script src="shoppingCart.js"></script>
+
 </html>
