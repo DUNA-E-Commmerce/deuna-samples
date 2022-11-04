@@ -11,11 +11,15 @@ const dunaCheckout = window.DeunaCheckout();
  * Open modal checkout widget
  */
 const shouldOpen = async () => {
+  const data = editor.get();
   try {
     const response = await fetch("http://localhost:3000/tokenizeOrder", {
       method: "POST",
-      mode: "no-cors",
-      body: JSON.stringify(editor.get()),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
     });
     // Configure checkout
     await dunaCheckout.configure({
