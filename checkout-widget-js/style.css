@@ -16,6 +16,7 @@ html {
 }
 .cart-container {
   padding: 25px;
+  width: 30vw;
 }
 .checkout-btn {
   width: 250px;
@@ -55,5 +56,5 @@ html {
   padding: 10px 20px;
   height: 97vh;
   overflow-y: scroll;
-  width: 900px;
+  width: 70vw;
 }
