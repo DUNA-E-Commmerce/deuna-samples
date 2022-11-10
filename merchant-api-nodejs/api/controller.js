@@ -3,11 +3,10 @@ const shippingMethods = require("../mock/shippingMethods");
 const coupons = require("../mock/coupons");
 const store = require("../store/db");
 // Merchant API URL
-const URL_BASE = "https://staging-apigw.getduna.com";
 
 function merchantApi() {
   async function getTokenizedOrder(orderPayload) {
-    const urlTokenizedOrder = `${URL_BASE}/merchants/orders`;
+    const urlTokenizedOrder = `${process.env.URL_BASE}/merchants/orders`;
 
     const response = await req("POST", urlTokenizedOrder, orderPayload);
     //example to save data in DB
@@ -102,6 +101,18 @@ function merchantApi() {
     };
   }
 
+  // notify order:
+  async function notifyStatus(order) {
+    const status = order.status;
+    const orderId = order.order_id;
+    return {
+      status,
+      data: {
+        order_id: orderId,
+      },
+    };
+  }
+
   //Helper to get order from Merchant API
   async function getOrderWithToken(orderId) {
     //get token from DB
@@ -111,7 +122,7 @@ function merchantApi() {
     }
     const token = result.token;
     // get order from Merchant API
-    const urlOrderWithToken = `${URL_BASE}/merchants/orders/${token}`;
+    const urlOrderWithToken = `${process.env.URL_BASE}/merchants/orders/${token}`;
     const response = await req("GET", urlOrderWithToken);
     if (response.error) {
       throw new Error("Error internal");
@@ -150,6 +161,7 @@ function merchantApi() {
     setShippingMethod,
     applyCoupon,
     removeCoupon,
+    notifyStatus,
   };
 }
 
