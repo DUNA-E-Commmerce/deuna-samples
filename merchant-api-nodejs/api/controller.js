@@ -2,15 +2,15 @@ const request = require("request");
 const shippingMethods = require("../mock/shippingMethods");
 const coupons = require("../mock/coupons");
 const store = require("../store/db");
-
-const URL_BASE = "https://staging-apigw.getduna.com"; // Merchant API
+// Merchant API URL
+const URL_BASE = "https://staging-apigw.getduna.com";
 
 function merchantApi() {
   async function getTokenizedOrder(orderPayload) {
     const urlTokenizedOrder = `${URL_BASE}/merchants/orders`;
 
     const response = await req("POST", urlTokenizedOrder, orderPayload);
-    //save data in DB
+    //example to save data in DB
     store.push("orders", {
       token: response.token,
       orderId: response.order.order_id,
@@ -21,11 +21,12 @@ function merchantApi() {
   async function getShippingMethods(orderId) {
     const { order, token } = await getOrderWithToken(orderId);
 
-    // set shipping cost and modify total cost in order
+    // example to set shipping cost and modify total cost in order
     order["shipping_amount"] = shippingMethods[0].cost;
     order["sub_total"] = order["items_total_amount"] + order["shipping_amount"];
     order["total_amount"] = order["sub_total"] + order["tax_amount"];
 
+    //should return this structure
     return {
       order: order,
       token: token,
@@ -36,7 +37,7 @@ function merchantApi() {
   async function setShippingMethod(orderId, codeMethod) {
     const { order, token } = await getOrderWithToken(orderId);
 
-    //modify shipping cost according new shipping method
+    //example to modify shipping cost according new shipping method
     let newShippingCost = 0;
     for (const method in shippingMethods) {
       const code = shippingMethods[method].code;
@@ -48,6 +49,7 @@ function merchantApi() {
     order["sub_total"] = order["items_total_amount"] + newShippingCost;
     order["total_amount"] = order["sub_total"] + order["tax_amount"];
 
+    //should return this structure
     return {
       order: order,
       token: token,
@@ -70,6 +72,7 @@ function merchantApi() {
     //set coupon structure
     order["discounts"] = couponSelected;
 
+    //should return this structure
     return {
       order: order,
       token: token,
@@ -79,7 +82,7 @@ function merchantApi() {
   async function removeCoupon(orderId, couponCode) {
     const { order, token } = await getOrderWithToken(orderId);
 
-    //validate coupon is available
+    //example to validate coupon is available
     const couponSelected = coupons.find((coupon) => coupon.code === couponCode);
     if (!couponSelected) {
       throw new Error("coupon not exist");
@@ -92,17 +95,17 @@ function merchantApi() {
     //remove discounts
     order["discounts"] = [];
 
+    //should return this structure
     return {
       order: order,
       token: token,
     };
   }
 
-  //get Order from Merchant API
+  //Helper to get order from Merchant API
   async function getOrderWithToken(orderId) {
     //get token from DB
     const result = await store.get("orders", orderId);
-    console.log("result", result);
     if (!result) {
       throw new Error("Data not found");
     }
@@ -116,7 +119,7 @@ function merchantApi() {
     return response;
   }
 
-  // Function to Request
+  // Helper to request
   function req(method, url, orderPayload) {
     return new Promise((resolve, reject) => {
       request(

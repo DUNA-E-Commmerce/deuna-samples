@@ -4,7 +4,6 @@ const cors = require("cors");
 const env = require("dotenv").config({ path: "./.env" });
 const merchantApi = require("./controller");
 const response = require("../network/response");
-const orderPayload = require("../mock/orderPayload");
 
 const app = express();
 
@@ -14,7 +13,7 @@ app.use(cors({ origin: true }));
 // Get Tokenized Order
 app.post("/tokenizeOrder", (req, res) => {
   merchantApi
-    .getTokenizedOrder(orderPayload)
+    .getTokenizedOrder(req.body)
     .then(async (tokenizedOrder) => {
       response.success(req, res, tokenizedOrder, 200);
     })
@@ -28,7 +27,12 @@ app.post("/getShippingMethods/:orderId", (req, res) => {
   merchantApi
     .getShippingMethods(req.params.orderId)
     .then((orderWithShippingMethods) => {
-      response.success(req, res, orderWithShippingMethods, 200);
+      //should return this structure
+      res.status(200).send({
+        order: orderWithShippingMethods.order,
+        token: orderWithShippingMethods.token,
+        shipping_methods: orderWithShippingMethods.shipping_methods,
+      });
     })
     .catch((err) => {
       response.error(req, res, err, 400);
@@ -39,7 +43,11 @@ app.patch("/setShippingMethod/:orderId/:codeMethod", (req, res) => {
   merchantApi
     .setShippingMethod(req.params.orderId, req.params.codeMethod)
     .then((orderWithShippingMethods) => {
-      response.success(req, res, orderWithShippingMethods, 200);
+      //should return this structure
+      res.status(200).send({
+        order: orderWithShippingMethods.order,
+        token: orderWithShippingMethods.token,
+      });
     })
     .catch((err) => {
       response.error(req, res, err, 400);
@@ -50,7 +58,11 @@ app.post("/applyCoupons/:orderId", (req, res) => {
   merchantApi
     .applyCoupon(req.params.orderId, req.body.coupon_code)
     .then((orderWithToken) => {
-      response.success(req, res, orderWithToken, 200);
+      //should return this structure
+      res.status(200).send({
+        order: orderWithToken.order,
+        token: orderWithToken.token,
+      });
     })
     .catch((err) => {
       response.error(req, res, err, 400);
@@ -61,7 +73,11 @@ app.delete("/removeCoupons/:orderId/code/:couponCode", (req, res) => {
   merchantApi
     .removeCoupon(req.params.orderId, req.params.couponCode)
     .then((orderWithToken) => {
-      response.success(req, res, orderWithToken, 200);
+      //should return this structure
+      res.status(200).send({
+        order: orderWithToken.order,
+        token: orderWithToken.token,
+      });
     })
     .catch((err) => {
       response.error(req, res, err, 400);
