@@ -13,7 +13,7 @@ const dunaCheckout = window.DeunaCheckout();
 const shouldOpen = async () => {
   const data = editor.get();
   try {
-    const response = await fetch("http://localhost:3000/tokenizeOrder", {
+    const response = await fetch(BASE_URL + '/tokenizeOrder', {
       method: "POST",
       headers: {
         'Accept': 'application/json',
@@ -21,13 +21,15 @@ const shouldOpen = async () => {
       },
       body: JSON.stringify(data),
     });
+    const newResponse = await response;
     // Configure checkout
     await dunaCheckout.configure({
-      env: "staging",
+      env: ENVIRONMENT,
       apiKey: DEUNA_PRIVATE_API_KEY,
-      orderToken:
-        response.json().token || "kpjh0zVDzfwHVGB8GXmsqVN1PyhuXfhjzQTcBF5",
+      orderToken: newResponse.body.token,
     });
     await dunaCheckout.show();
-  } catch (error) {}
+  } catch (error) {
+    alert(error);
+  }
 };
