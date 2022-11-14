@@ -25,13 +25,13 @@ function App() {
       });
       const newResponse = await response.json();
 
-      if (!newResponse.token) return;
+      if (!newResponse.body.token) return;
 
       // Configure checkout
       await dunaCheckout.configure({
         env: process.env.ENVIRONMENT,
         apiKey: process.env.DEUNA_PRIVATE_API_KEY,
-        orderToken: newResponse.token,
+        orderToken: newResponse.body.token,
       });
 
       await dunaCheckout.show();
