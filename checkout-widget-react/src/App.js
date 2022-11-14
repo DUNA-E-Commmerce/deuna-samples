@@ -15,7 +15,7 @@ function App() {
     // Initialize checkout
     const dunaCheckout = window.DeunaCheckout();
     try {
-      const response = await fetch("http://localhost:3000/tokenizeOrder", {
+      const response = await fetch(`${process.env.BASE_URL}/tokenizeOrder`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -23,18 +23,19 @@ function App() {
         },
         body: JSON.stringify(data),
       });
+      const newResponse = await response.json();
 
-      if (!response.token) return;
+      if (!newResponse.token) return;
 
       // Configure checkout
       await dunaCheckout.configure({
-        env: "staging",
+        env: process.env.ENVIRONMENT,
         apiKey: process.env.DEUNA_PRIVATE_API_KEY,
-        orderToken: response.json().token,
+        orderToken: newResponse.token,
       });
 
       await dunaCheckout.show();
-    } catch (error) {}
+    } catch (error) {console.error(error)}
   };
 
   return (
@@ -54,7 +55,6 @@ function App() {
         />
         <img src={ListProducts} alt="cart" className="cart-list" />
 
-        {/**  Open button checkout widget */}
         <button
           id="button-checkout-deuna"
           className="purchase-btn"
