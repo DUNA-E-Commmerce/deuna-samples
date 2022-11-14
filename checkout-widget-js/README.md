@@ -19,4 +19,6 @@ Ensure the API key is configured in `config.js` in root directory. It should inc
 ```yaml
 # DEUNA API keys - see https://docs.deuna.com/docs/api-key
 DEUNA_PRIVATE_API_KEY=""00cdd7f62063c..."
+ENVIRONMENT= "Staging..."
+BASE_URL= "https://localhost:3000..."
 ```

@@ -13,7 +13,7 @@ const dunaCheckout = window.DeunaCheckout();
 const shouldOpen = async () => {
   const data = editor.get();
   try {
-    const response = await fetch(BASE_URL + '/tokenizeOrder', {
+    const response = await fetch(`${BASE_URL}/tokenizeOrder`, {
       method: "POST",
       headers: {
         'Accept': 'application/json',
@@ -21,7 +21,7 @@ const shouldOpen = async () => {
       },
       body: JSON.stringify(data),
     });
-    const newResponse = await response;
+    const newResponse = await response.json();
     // Configure checkout
     await dunaCheckout.configure({
       env: ENVIRONMENT,
