@@ -24,3 +24,5 @@ DEUNA_PRIVATE_API_KEY=sk_test...
 npm install
 npm start
 ```
+
+3. You should deploy the application in a service cloud to build and run app. (example render, in this case need to link your github repository with render).

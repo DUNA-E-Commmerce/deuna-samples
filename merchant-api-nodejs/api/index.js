@@ -23,9 +23,9 @@ app.post("/tokenizeOrder", (req, res) => {
 });
 
 // Set ShippingMethods to Order
-app.post("/getShippingMethods/:orderId", (req, res) => {
+app.post("/getShippingMethods/:order_id", (req, res) => {
   merchantApi
-    .getShippingMethods(req.params.orderId)
+    .getShippingMethods(req.params.order_id)
     .then((orderWithShippingMethods) => {
       //should return this structure
       res.status(200).send(orderWithShippingMethods);
@@ -35,9 +35,9 @@ app.post("/getShippingMethods/:orderId", (req, res) => {
     });
 });
 
-app.patch("/setShippingMethod/:orderId/:codeMethod", (req, res) => {
+app.patch("/setShippingMethod/:order_id/:code_method", (req, res) => {
   merchantApi
-    .setShippingMethod(req.params.orderId, req.params.codeMethod)
+    .setShippingMethod(req.params.order_id, req.params.code_method)
     .then((orderWithShippingMethods) => {
       //should return this structure
       res.status(200).send(orderWithShippingMethods);
@@ -47,24 +47,24 @@ app.patch("/setShippingMethod/:orderId/:codeMethod", (req, res) => {
     });
 });
 
-app.post("/applyCoupons/:orderId", (req, res) => {
+app.post("/applyCoupons/:order_id", (req, res) => {
   merchantApi
-    .applyCoupon(req.params.orderId, req.body.coupon_code)
-    .then((orderWithToken) => {
+    .applyCoupon(req.params.order_id, req.body.coupon_code)
+    .then((orderWithDiscount) => {
       //should return this structure
-      res.status(200).send(orderWithToken);
+      res.status(200).send(orderWithDiscount);
     })
     .catch((err) => {
       response.error(req, res, err, 400);
     });
 });
 
-app.delete("/removeCoupons/:orderId/code/:couponCode", (req, res) => {
+app.delete("/removeCoupons/:order_id/code/:coupon_code", (req, res) => {
   merchantApi
-    .removeCoupon(req.params.orderId, req.params.couponCode)
-    .then((orderWithToken) => {
+    .removeCoupon(req.params.order_id, req.params.coupon_code)
+    .then((orderWithoutDiscount) => {
       //should return this structure
-      res.status(200).send(orderWithToken);
+      res.status(200).send(orderWithoutDiscount);
     })
     .catch((err) => {
       response.error(req, res, err, 400);

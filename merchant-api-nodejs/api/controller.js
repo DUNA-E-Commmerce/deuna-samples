@@ -65,11 +65,11 @@ function merchantApi() {
     }
 
     //apply  discount
-    order["sub_total"] = order["items_total_amount"] - couponSelected.amount;
+    order["sub_total"] = order["sub_total"] - couponSelected.amount;
     order["total_amount"] =
       order["sub_total"] + order["shipping_amount"] + order["tax_amount"];
     //set coupon structure
-    order["discounts"] = couponSelected;
+    order["discounts"] = [couponSelected];
 
     //should return this structure
     return {
@@ -88,7 +88,7 @@ function merchantApi() {
     }
 
     //modify costs
-    order["sub_total"] = order["items_total_amount"] + couponSelected.amount;
+    order["sub_total"] = order["sub_total"] + couponSelected.amount;
     order["total_amount"] =
       order["sub_total"] + order["shipping_amount"] + order["tax_amount"];
     //remove discounts
