@@ -2,7 +2,7 @@
   "order": {
     "email": "cpadilla@getduna.com",
     "store_code": "all",
-    "payment_method": "cash",
+    "payment_method": "pos",
     "billing_address": {
       "first_name": "CArlos",
       "last_name": "Padilla",
@@ -14,9 +14,10 @@
       "address2": "12",
       "city": "Ciudad de mexico",
       "zipcode": "00810",
-      "state_name": "Pichincha",
-      "state_code": "PICHINCHA",
+      "state_name": "CDMX",
+      "state_code": "CDMX",
       "country": "MX",
+      "country_code": "MX",
       "additional_description": "12",
       "address_type": "home",
       "email": "cpadilla@getduna.com"
