@@ -1,0 +1,25 @@
+{
+  "order": {
+    "email": "cpadilla@getduna.com",
+    "store_code": "all",
+    "payment_method": "cash",
+    "billing_address": {
+      "first_name": "CArlos",
+      "last_name": "Padilla",
+      "phone": "+34617014458",
+      "identity_document": "1111111111",
+      "lat": -0.1602236,
+      "lng": -78.49664,
+      "address1": "iturbide 23, Ciudad de mexico 00810, Mexico",
+      "address2": "12",
+      "city": "Ciudad de mexico",
+      "zipcode": "00810",
+      "state_name": "Pichincha",
+      "state_code": "PICHINCHA",
+      "country": "MX",
+      "additional_description": "12",
+      "address_type": "home",
+      "email": "cpadilla@getduna.com"
+    }
+  }
+}
