@@ -13,7 +13,7 @@ function App() {
    */
   const shouldOpen = async () => {
     // Initialize checkout
-    const dunaCheckout = window.DeunaCheckout();
+   const dunaCheckout = window.DeunaCheckout();
     try {
       const response = await fetch(`${process.env.BASE_URL}/tokenizeOrder`, {
         method: "POST",
@@ -40,13 +40,14 @@ function App() {
 
   return (
     <div className="App">
-      <JSONInput
-        id="a_unique_id"
-        placeholder={data}
-        locale={locale}
-        height="100vh"
-        width="70vw"
-      />
+    <JSONInput
+      id={1}
+      placeholder={data}
+      onChange={(event) => setData(event.jsObject)}
+      locale={locale}
+      height="100vh"
+      width="70vw"
+    />
       <div className="shopping-cart">
         <img
           className="brand"
