@@ -63,7 +63,7 @@ function checkoutSDK() {
       throw new Error("Data not found");
     }
 
-    await checkout.getPaymentMethods();
+    const paymentMethods = await checkout.getPaymentMethods();
 
     const { data, error } = await checkout.pay(payload.order);
 
@@ -73,6 +73,7 @@ function checkoutSDK() {
     const order = data.order;
     return {
       order,
+      paymentMethods,
     };
   }
 
