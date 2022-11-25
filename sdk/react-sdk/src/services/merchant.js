@@ -1,4 +1,3 @@
-//import { URL_SERVICES } from "../config";
 const headers = {
   Accept: "application/json",
   "Content-Type": "application/json",

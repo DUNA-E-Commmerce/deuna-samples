@@ -1,11 +1,11 @@
 {
   "order": {
-    "email": "cpadilla@getduna.com",
+    "email": "name@getduna.com",
     "store_code": "all",
     "payment_method": "pos",
     "billing_address": {
-      "first_name": "CArlos",
-      "last_name": "Padilla",
+      "first_name": "name",
+      "last_name": "lastName",
       "phone": "+52617014458",
       "identity_document": "1111111111",
       "lat": 25.539260206692635,
@@ -19,7 +19,7 @@
       "country": "MX",
       "additional_description": "",
       "address_type": "home",
-      "email": "cpadilla@getduna.com"
+      "email": "name@getduna.com"
     }
   }
 }
