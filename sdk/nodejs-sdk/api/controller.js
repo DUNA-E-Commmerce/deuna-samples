@@ -8,7 +8,7 @@ function checkoutSDK() {
   // set fraudId and OrderId in store
   async function setFraudId(fraudId, orderId) {
     //save data in DB
-    store.push("fraudIds", {
+    store.push("fraudCredentials", {
       orderId,
       fraudId,
     });
@@ -22,7 +22,7 @@ function checkoutSDK() {
   //get tokenized order
   async function getTokenizedOrder(orderPayload, orderId) {
     //get fraudId
-    const orderDB = await store.get("fraudIds", orderId);
+    const orderDB = await store.get("fraudCredentials", orderId);
     if (!orderDB) {
       throw new Error("Data not found");
     }
@@ -32,7 +32,7 @@ function checkoutSDK() {
     checkout = await Checkout.newInstance({
       privateApiKey: process.env.DEUNA_PRIVATE_API_KEY,
       publicApiKey: process.env.DEUNA_PUBLIC_API_KEY,
-      env: "staging",
+      env: process.env.ENVIRONMENT,
       sessionId: fraudId.sessionId,
       deviceId: fraudId.deviceId,
     });

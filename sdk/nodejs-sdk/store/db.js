@@ -5,7 +5,7 @@ db = {
       token: "some_token",
     },
   ],
-  fraudIds: [
+  fraudCredentials: [
     {
       orderId: "1",
       fraudId: {
