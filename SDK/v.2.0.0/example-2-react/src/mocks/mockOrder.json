@@ -31,12 +31,12 @@
           "currency_symbol": "$"
         },
         "quantity": 1,
-        "image_url": "https://images-staging.getduna.com/95463fb5-6279-4ec3-8ff9-fe07aacd2142/a901b84fcbeaedd5_domicilio_519_744x744.png?d=600x600"
+        "image_url": ""
       }
     ],
     "billing_address": {
-      "first_name": "CArlos",
-      "last_name": "Padilla",
+      "first_name": "Name",
+      "last_name": "LastName",
       "phone": "+52617014458",
       "identity_document": "1111111111",
       "lat": 25.539260206692635,
@@ -50,12 +50,12 @@
       "country": "MX",
       "additional_description": "",
       "address_type": "home",
-      "email": "cpadilla@getduna.com"
+      "email": "test@gmail.com"
     },
     "shipping_address": {
-      "first_name": "CArlos",
-      "last_name": "Padilla",
-      "phone": "+52617014458",
+      "first_name": "Name",
+      "last_name": "LastName",
+      "phone": "+526123456789",
       "identity_document": "1111111111",
       "lat": 25.539260206692635,
       "lng": -103.46132558827024,
@@ -69,7 +69,7 @@
       "country_code": "MX",
       "additional_description": "",
       "address_type": "home",
-      "email": "cpadilla@getduna.com"
+      "email": "test@gmail.com"
     },
     "shipping_options": {
       "type": "delivery",
