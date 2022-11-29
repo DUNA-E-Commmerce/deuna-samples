@@ -7,7 +7,6 @@ import jsonPaymentPayload from "./mock/paymenPayload.json";
 
 import { Checkout } from "@deuna/checkout-sdk";
 import { merchantServices } from "./services/merchant";
-//import { PUBLIC_KEY_API } from "./config";
 import { CircleWithCheckIcon } from "./assets/check.icon";
 import { CircleWithErrorIcon } from "./assets/error.icon";
 

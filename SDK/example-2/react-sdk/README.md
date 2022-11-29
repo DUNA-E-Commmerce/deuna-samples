@@ -8,7 +8,7 @@ React implementation
 
 ## How to run
 
-1. Get secret access public api key [visit](https://docs.deuna.com/docs/api-key)
+1. Get public api key [visit](https://docs.deuna.com/docs/api-key)
 2. Create .env file 
 3. Set secret access public api key in .env file 
 4. Set enviroment in .env file 
