@@ -1,0 +1,98 @@
+{
+  "order": {
+    "order_id": "ID1",
+    "currency": "USD",
+    "store_code": "all",
+    "timezone": "America/Mexico_City",
+    "tax_amount": 10,
+    "shipping_amount": 10,
+    "items_total_amount": 299,
+    "sub_total": 299,
+    "total_amount": 2990,
+    "total_discount": 0,
+    "items": [
+      {
+        "id": "79",
+        "name": "10 ALITAS VOLANTE",
+        "description": "10 alitas picantes",
+        "total_amount": {
+          "amount": 299,
+          "currency": "USD",
+          "currency_symbol": "$"
+        },
+        "unit_price": {
+          "amount": 299,
+          "currency": "USD",
+          "currency_symbol": "$"
+        },
+        "tax_amount": {
+          "amount": 754,
+          "currency": "USD",
+          "currency_symbol": "$"
+        },
+        "quantity": 1,
+        "image_url": "https://images-staging.getduna.com/95463fb5-6279-4ec3-8ff9-fe07aacd2142/a901b84fcbeaedd5_domicilio_519_744x744.png?d=600x600"
+      }
+    ],
+    "billing_address": {
+      "first_name": "name",
+      "last_name": "lastName",
+      "phone": "+52617014458",
+      "identity_document": "1111111111",
+      "lat": 25.539260206692635,
+      "lng": -103.46132558827024,
+      "address1": "Av Morelos 1157, Primitivo Centro, Torreón, Coah., Mexico",
+      "address2": "Av Morelos 1157, Primitivo Centro, Torreón, Coah., Mexico",
+      "city": "Torreón",
+      "zipcode": "--",
+      "state_name": "Coahuila de Zaragoza",
+      "state_code": "COAH",
+      "country": "MX",
+      "additional_description": "",
+      "address_type": "home",
+      "email": "name@getduna.com"
+    },
+    "shipping_address": {
+      "first_name": "name",
+      "last_name": "lastName",
+      "phone": "+52617014458",
+      "identity_document": "1111111111",
+      "lat": 25.539260206692635,
+      "lng": -103.46132558827024,
+      "address1": "Av Morelos 1157, Primitivo Centro, Torreón, Coah., Mexico",
+      "address2": "Av Morelos 1157, Primitivo Centro, Torreón, Coah., Mexico",
+      "city": "Torreón",
+      "zipcode": "--",
+      "state_name": "Coahuila de Zaragoza",
+      "state_code": "COAH",
+      "country": "MX",
+      "country_code": "MX",
+      "additional_description": "",
+      "address_type": "home",
+      "email": "name@getduna.com"
+    },
+    "shipping_options": {
+      "type": "delivery",
+      "details": {
+        "store_name": "Store Name",
+        "address": "6 Rotermanni 11343 Talinn",
+        "address_coordinates": {
+          "lat": 4.721245,
+          "lng": -74.04673
+        },
+        "contact": {
+          "name": "jhon snow",
+          "phone": "+9999999999"
+        },
+        "additional_details": {
+          "address_notes": "first floor"
+        }
+      }
+    },
+    "user_instructions": "NO REQUERIDO",
+    "metadata": {
+      "key1": "NO REQUERIDO",
+      "key2": "NO REQUERIDO"
+    }
+  }
+}
