@@ -1,15 +1,57 @@
-# SDK
-In this example, the SDK is being used in both frontend (React) and backend (node).
+<br />
+<p align="center">
+  <a href="https://deuna.com/">
+    <img src="https://uploads-ssl.webflow.com/62e806ed6cc7b20ca6dc2b93/62fca876ea0f2668b1c21b8b_deuna.png" width="318px" alt="deuna logo" />
+  </a>
+</p>
+<br />
 
-In frontend is used to :
-- Initialization checkout.
-- Get credentials and send to backend.
-- Send payload to backend to get Tokenized order.
-- Send payload to backend to get process pay.
+# SDK: Ejemplo procesando la orden en backend
 
-In Backend is used to:
-- Instance of checkout.
-- Save Credentials.
-- Get tokenized order.
-- Get payment methods.
-- Process pay.
+Para este ejemplo se utilizará react para el frontend y node.js para el backend.
+
+# Descripción
+
+| Procesos| Frontend | Backend |
+| --- | --- | --- |
+| Inicializar checkout |  ✅  |  |
+| Obtener credenciales |  ✅  |  |
+| Generar payload para tokenizar orden |  ✅  |  |
+| Generar payload para procesar pago |  ✅  |  |
+| Almacenar las credenciales |  |  ✅  |
+| Instanciar checkout |  |  ✅  |
+| Tokenizar orden |  |  ✅  |
+| Obtener métodos de pago |  |  ✅  |
+| Procesar pago |  |  ✅  |
+
+# Diagrama de Flujo 
+<br />
+<p align="center">
+  <a href="https://deuna.com/">
+    <img src="https://files.readme.io/a908f9a-ejemplo_1_sdk.png" align="" alt="" caption="" height="auto" title="" width="auto" loading="lazy">
+  </a>
+</p>
+<br />
+
+# Estructura del Repositorio
+
+```
+Example-1
+│___README.md
+│
+└───nodejs-sdk
+    └───api
+    └───network
+    └───store
+    └───.env.sample
+    └───README.md
+│
+└───react-sdk
+    └───public
+    └───src
+    └───.env.sample
+    └───README.md
+```
+
+# Requisitos previos
+Para inicializar el SDK debemos tener antes la API KEY pública y privada.[¿Cómo obtener mis API Keys?](https://docs.deuna.com/v2.0/docs/api-key)
