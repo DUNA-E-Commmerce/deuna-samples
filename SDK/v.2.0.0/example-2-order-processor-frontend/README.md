@@ -1,25 +1,79 @@
-# Implement checkout widget in react
+<br />
+<p align="center">
+  <a href="https://deuna.com/">
+    <img src="https://uploads-ssl.webflow.com/62e806ed6cc7b20ca6dc2b93/62fca876ea0f2668b1c21b8b_deuna.png" width="318px" alt="deuna logo" />
+  </a>
+</p>
+<br />
 
-## Requirements
+# SDK: Ejemplo procesando la orden en frontend
 
-- Api key
-- [nodejs](https://nodejs.org/en/)
+Para este ejemplo se utilizará react para el frontend.
 
-## How to run
+# Descripción
 
-1. Get secret access token [visit](https://docs.deuna.com/docs/api-key)
-2. Create .env file 
-3. Set public access token in .env file 
-4. Set enviroment in .env file 
-5. Set base url in .env file 
-6. run `npm install` or `yarn install`
-7. run `npm run dev` or `yarn dev`, Runs the app in the development mode. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+| Procesos| Frontend | Servicio externo |
+| --- | --- | --- |
+| Inicializar checkout |  ✅  |  |
+| Generar payload para tokenizar la orden |  ✅  |  |
+| Generar payload para procesar el pago |  ✅  |  |
+| Tokenizar la orden |  |  ✅  |
+| Obtener métodos de pago |  ✅  |  |
+| Procesar pago |  ✅  |  |
 
-Ensure the API key is configured in `.env` in root directory. It should include the following key:
+# Diagrama de Flujo 
+<br />
+<p align="center">
+    <img src="https://files.readme.io/a53926a-ejemplo_2_sdk.png" align="" alt="" caption="" height="auto" title="" width="auto" loading="lazy">
+</p>
+<br />
+
+
+
+# Requisitos previos
+- React
+- Configurar el archivo .env 
+- API KEY pública y privada. [Puedes obtenerlas aquí ](https://docs.deuna.com/v2.0/docs/api-key)
+
+
+## Proceso de Instalación:
+
+1. Establecer las variables de entorno en el archivo `.env`, en el repositorio encontraras el archivo `.env.sample` como ejemplo. El `.env` debe contener la siguiente información:
 
 ```yaml
 # DEUNA API keys - see https://docs.deuna.com/docs/api-key
-DEUNA_PUBLIC_API_KEY= "00cdd7f62063c..."
-ENVIRONMENT= "Staging..."
-BASE_URL= "https://localhost:3000/..."
+DEUNA_PUBLIC_API_KEY= <Reemplazar con tu llave pública>
+ENVIRONMENT=<staging|production>
+BASE_URL= <Reemplazar con la Dirección externa donde se va tokenizar la orden>
+```
+
+2. Instalar Dependencias y correr el servidor.
+
+```
+npm install
+npm start
+```
+
+3. Abrir [http://localhost:3000](http://localhost:3000) en tu navegador de internet:
+
+<br />
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/112917159/203379196-a942e0e0-36f0-4112-9255-6fcb7ccabad5.png"  alt="Vista previa" />
+</p>
+<br />
+
+# Estructura del Repositorio
+
+```
+Example-2
+│
+│___public
+│
+└───src
+│   └───assets 
+│   └───mock
+│   │   └───orderPayload.json
+│   │   └───paymentPayload.json  
+│   └───App.jsx 
+└───README.md
 ```
