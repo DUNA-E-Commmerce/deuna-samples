@@ -12,7 +12,7 @@
 <p align="center">Todas las integraciones que tu e-commerce necesita unificadas en DEUNA Checkout (Pagos crédito/débito, pagos alternativos, analítica, fraude y mucho más).</p>
 <br />
 
-<p align="center" style="background: white;">
+<p align="center" style="background: #fff;">
   <a href="https://docs.deuna.com/">
     <img src="https://images.getduna.com/nuevo-banner-homepage-docs.png" alt="DEUNA Checkout" class="img-fluid mb-3">
   </a>
