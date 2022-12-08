@@ -5,8 +5,6 @@
   </a>
 </p>
 
-<hr />
-
 <h2 align="center">Widget checkout</h2>
 <p align="center">Es una interfaz ya programada con todo lo necesario para ser usada de manera inmediata.</p>
 <br />
