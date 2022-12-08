@@ -4,7 +4,6 @@
     <img src="https://uploads-ssl.webflow.com/62e806ed6cc7b20ca6dc2b93/62fca876ea0f2668b1c21b8b_deuna.png" width="318px" alt="deuna logo" />
   </a>
 </p>
-<br />
 
 <hr />
 

@@ -4,7 +4,6 @@
     <img src="https://files.readme.io/e32846c-small-logodeve.png" width="318px" alt="deuna logo" />
   </a>
 </p>
-<br />
 
 <hr />
 
