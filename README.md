@@ -7,8 +7,8 @@
 
 <hr />
 
-<h3 align="center">UNA INTEGRACIÓN QUE ACCEDE A TODO EL ECOSISTEMA</h3>
-<p align="center">Todas las integraciones que tu e-commerce necesita unificadas en DEUNA Checkout (Pagos crédito/débito, pagos alternativos, analítica, fraude y mucho más).</p>
+<h3 align="center">UNA SOLA INTEGRACIÓN PARA ACCEDER A TODO NUESTRO ECOSISTEMA</h3>
+<p align="center">Todo lo que el checkout de tu e-commerce necesita unificadas en DEUNA Checkout (Pagos crédito/débito, pagos alternativos, analítica, fraude y mucho más).</p>
 <br />
 
 <p align="center" style="background: #fff;">
@@ -36,7 +36,7 @@ Se requiere lo siguiente si estas revisando documentación y plantillas de prueb
 El SDK es un de kit desarrollo para poder integrar tu comercio con la plataforma de DEUNA y de esta forma gestionar al usuario en sus pagos, direcciones, tarjetas mucho mas.
 
 ## Widget checkout
-Es una interfaz ya programada con todo lo necesario para ser usada de manera inmediata.
+Es una interfaz grafica ya programada con todo lo necesario para ser usada de manera inmediata.
 
 
 ## Merchant api
