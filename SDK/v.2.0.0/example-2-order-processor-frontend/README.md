@@ -50,11 +50,11 @@ BASE_URL= <Reemplazar con la Dirección externa donde se va tokenizar la orden>
 2. Instalar Dependencias y correr el servidor.
 
 ```
-npm install
-npm start
+yarn install
+yarn dev
 ```
 
-3. Abrir [http://localhost:3000](http://localhost:3000) en tu navegador de internet:
+3. Abrir [http://localhost:5173](http://localhost:5173) en tu navegador de internet:
 
 <br />
 <p align="center">
