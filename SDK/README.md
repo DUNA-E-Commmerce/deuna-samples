@@ -56,7 +56,7 @@ SDK
 ```
 
 # Requisitos previos
-Para inicializar el SDK debemos tener antes la API KEY pública y privada.[¿Cómo obtener mis API Keys?](https://docs.deuna.com/v2.0/docs/api-key)
+Para inicializar el SDK debemos tener antes la API KEY pública y privada. [Puedes obtenerlas aquí](https://docs.deuna.com/v2.0/docs/api-key)
 
 # Instalación
 

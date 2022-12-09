@@ -41,4 +41,4 @@ Merchant-API
 ```
 
 ## Requisitos previos
-Para usar la API Merchant debemos tener antes la API KEY privada.[¿Cómo obtener mis API Keys?](https://docs.deuna.com/v2.0/docs/api-key)
+Para usar la API Merchant debemos tener antes la API KEY privada. [Puedes obtenerlas aquí](https://docs.deuna.com/v2.0/docs/api-key)
