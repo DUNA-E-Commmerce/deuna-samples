@@ -64,9 +64,9 @@ project
 2. Agrega la variable `DEUNA_PRIVATE_API_KEY` en el archivo .env 
 3. Agrega la variable `ENVIRONMENT` al archivo .env 
 4. Agrega la variable `BASE_URL` al archivo .env 
-5. Ejecutar `npm install` o `yarn install` 
-6. Ejecutar `npm start`, ejecutará la aplicación en modo desarrollador.
-Abrir http://localhost:3000 en el navegador.
+5. Ejecutar `yarn install` 
+6. Ejecutar `yarn dev`, ejecutará la aplicación en modo desarrollador.
+Abrir http://localhost:5173 en el navegador.
 
 Asegurate de configurar estas variables en `.env` que deberá encontrarse en la raiz del proyecto. Debería incluir las siguientes variables:
 
