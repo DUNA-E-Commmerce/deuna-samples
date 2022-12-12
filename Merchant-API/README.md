@@ -7,18 +7,14 @@
 <br />
 
 # MERCHANT API
-Son un conjunto de API REST de tipo POST, PATCH, y DELETE que permitirá comunicar bidireccionalmente tu servidor del comercio donde está el modelo de negocio con el servidor de DEUNA donde están guardadas las configuraciones previamente realizadas en el Admin del comercio.
+Son un conjunto de API REST de tipo POST, PATCH, y DELETE que permitirá comunicar bidireccionalmente tu servidor del comercio  con el servidor de DEUNA.
 
-## Funcionalidades
+Son 4 API REST:
+1. Obtener métodos de envío.
+2. Actualizar métodos de envío.
+3. Aplicar cupón.
+4. Remover cupón.
 
-Provee 6 endpoints:
-
-1. `/tokenizeOrder` para tokenizar una orden.
-2. `/getShippingMethods/:order_id` para obtener los métodos de envio.
-3. `/setShippingMethod/:order_id/:code_method` para actualizar los métodos de envio.
-4. `/applyCoupons/:order_id` para aplicar un cupon.
-5. `/removeCoupons/:order_id/code/:coupon_code` para remover un cupon.
-6. `/notify` para notificar la orden.
 
 ## Contenido
 Este repositorio incluye ejemplos de implmentar el merchant API en:
