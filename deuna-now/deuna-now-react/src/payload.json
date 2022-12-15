@@ -1,0 +1,14 @@
+{
+  "order_type": "DEUNA_NOW",
+  "order": {
+    "order_id": "ID1002",
+    "currency": "USD",
+    "store_code": "all",
+    "timezone": "America/Mexico_City",
+    "tax_amount": 10,
+    "shipping_amount": 10,
+    "items_total_amount": 299,
+    "sub_total": 299,
+    "total_amount": 2990
+  }
+}

@@ -1,0 +1,52 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 100%;
+}
+.shopping-cart {
+  width: 30vw;
+  height: 100vh;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.brand {
+  width: 180px;
+  margin: 0 auto;
+  display: block;
+}
+.cart-list {
+  width: 70%;
+  display: block;
+  margin: 50px auto;
+  opacity: 0.5;
+}
+.purchase-btn {
+  width: 250px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #221f20;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin: 0 auto;
+  display: block;
+}
+.purchase-btn img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
