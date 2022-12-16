@@ -1,0 +1,122 @@
+body,
+html {
+  margin: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+.brand {
+  width: 180px;
+  margin: 0 auto;
+  display: block;
+}
+.cart-container {
+  padding: 25px;
+  width: 30vw;
+}
+.checkout-btn {
+  width: 250px;
+  height: 45px;
+  border-radius: 8px;
+  background-color: #221f20;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin: 10px auto;
+  display: block;
+}
+.cart-list {
+  width: 70%;
+  display: block;
+  margin: 50px auto;
+  opacity: 0.5;
+}
+#json-input {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+#translate {
+  display: block;
+  height: 28px;
+  margin: 20px 0;
+  border-radius: 3px;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+#json-display {
+  border: 1px solid #000;
+  margin: 20px 0;
+  padding: 10px 20px;
+  height: 97vh;
+  overflow-y: scroll;
+  width: 70vw;
+}
+
+.popup-modal {
+  height: 565px;
+  width: 70%;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 45px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+  z-index: 1011;
+}
+
+.popup-modal.is--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-modal__close {
+  position: absolute;
+  font-size: 1.2rem;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+}
+
+.body-blackout {
+  position: absolute;
+  z-index: 1010;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: none;
+}
+
+.body-blackout.is-blacked-out {
+  display: block;
+}
+
+#root {
+  height: 400px;
+  display: inline-block;
+  overflow: auto;
+  width: 50%;
+  float: right;
+}
+
+h3 {
+  margin: 0;
+}
+
+pre#json-display-pay {
+  height: 400px;
+  overflow: auto;
+  width: 49%;
+  display: inline-block;
+}

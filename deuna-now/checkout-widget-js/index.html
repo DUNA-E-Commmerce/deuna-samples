@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+    <!--Add the script named Cross Domain Login -->
+    <script src="./dist/jquery-3.3.1.min.js"></script>
+    <script src="./dist/jquery.json-editor.min.js"></script>
+
+    <script src="https://cdn.getduna.com/cdl/index.js"></script>
+    <!--Add the checkout-widget -->
+    <script src="https://staging-cdn.getduna.com/payment-widget/v0.1/index.js"></script>
+    <!--Config variables -->
+    <script src="config.js"></script>
+    <!--Initialize and show checkout-widget -->
+    <script src="checkout-initialize.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="body-blackout"></div>
+
+    <div class="container">
+      <pre id="json-display"></pre>
+      <div class="cart-container">
+        <img
+          class="brand"
+          src="https://uploads-ssl.webflow.com/62e806ed6cc7b20ca6dc2b93/62fca876ea0f2668b1c21b8b_deuna.png"
+          alt=" DEUNA"
+        />
+        <img src="./images/list.png" alt="cart" class="cart-list" />
+       
+        <!-- Open button checkout widget -->
+        <button
+          id="button-checkout-deuna"
+          class="checkout-btn"
+          onclick="shouldOpen()"
+        >
+          <img
+            src="https://images.getduna.com/logo-full-deuna-D.svg"
+            alt=" DEUNA"
+          />
+          Checkout
+        </button>
+
+        <div class="popup-modal shadow" data-popup-modal="one">
+          <i class="fas fa-2x fa-times text-white bg-primary p-3 popup-modal__close"></i>
+          <h3 class="font-weight-bold">
+            Métodos de pago
+          </h3>
+
+
+          <pre id="json-display-pay"></pre>
+          <div id="root"></div>
+          <button id="button-checkout-deuna" class="checkout-btn" onclick="handlePay()">
+            Pagar
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </body>
+<script src="jEditor.js"></script>
+
+</html>
