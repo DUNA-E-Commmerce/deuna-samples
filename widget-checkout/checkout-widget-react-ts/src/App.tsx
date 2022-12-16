@@ -72,9 +72,9 @@ const App = () => {
         <img
           className="brand"
           src="https://uploads-ssl.webflow.com/62e806ed6cc7b20ca6dc2b93/62fca876ea0f2668b1c21b8b_deuna.png"
-          alt=" DEUNA"
+          alt="DEUNA logo"
         />
-        <img src={ListProducts} alt="cart" className="cart-list" />
+        <img src={ListProducts} alt="carrito de compra" className="cart-list" />
 
         <button
           id="button-checkout-deuna"
@@ -83,7 +83,7 @@ const App = () => {
         >
           <img
             src="https://images.getduna.com/logo-full-deuna-D.svg"
-            alt=" DEUNA"
+            alt="DEUNA logo"
           />
           Checkout
         </button>

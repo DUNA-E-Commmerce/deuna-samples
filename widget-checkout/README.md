@@ -6,7 +6,7 @@
 </p>
 
 <h2 align="center">Widget checkout</h2>
-<p align="center">Es una interfaz grafica ya programada con todo lo necesario para ser usada de manera inmediata.</p>
+<p align="center">Es una interfaz gráfica ya programada con todo lo necesario para ser usada de manera inmediata.</p>
 <br />
 
 <p align="center" style="background: white;">
@@ -23,7 +23,7 @@ Este repositorio es solamente para nuestra  <a href="https://docs.deuna.com/" st
 # ¿Qué controla el widget?
 * Toda la experiencia de compra final del cliente.
 * Integra nuestros servicios de procesamiento de pago.
-* Medidas anti fraude.
+* Medidas antifraude.
 * Tokenización de orden.
 * Notificación de estados mediante Webhook.
 * Comunicación directa con tu servidor mediante el Merchant API.
