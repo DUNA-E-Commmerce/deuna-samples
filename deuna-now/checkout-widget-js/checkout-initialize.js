@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 /**
  * Open modal checkout widget
  */
-
+let tokenUser;
+let tokenOrder;
 const shouldOpen = async () => {
   const data = editor.get();
   try {
@@ -41,6 +42,7 @@ const shouldOpen = async () => {
     });
     const newResponse = await response.json();
     // Configure checkout
+    tokenOrder = newResponse.token;
     await window.DeunaPay.default.configure({
       apiKey: DEUNA_PRIVATE_API_KEY,
       orderToken: newResponse.token,
@@ -54,7 +56,21 @@ const shouldOpen = async () => {
     popupModal.classList.add('is--visible')
     bodyBlackout.classList.add('is-blacked-out')
 
-      
+          const response2 = await fetch(`https://api.stg.deuna.io/users/login?type=guest`, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'x-api-key': DEUNA_PRIVATE_API_KEY,
+      },
+      body: JSON.stringify({
+        "user_id": "a22fcee2-bc37-4237-9ea4-6cc391705898"
+      }),
+    });
+
+    const newResponse2 = await response2.json();
+    tokenUser = newResponse2.token; 
+    console.log(newResponse2.token)
     /*await dunaCheckout.configure({
       env: ENVIRONMENT,
       apiKey: DEUNA_PRIVATE_API_KEY,
@@ -68,14 +84,17 @@ const shouldOpen = async () => {
 
 const handlePay = async () => {
     const data = payEditor.get();
-    const response = await fetch(`https://api.stg.deuna.io/merchants/transactions/purchase`, {
+
+
+    await fetch(`https://api.stg.deuna.io/merchants/transactions/purchase`, {
       method: "POST",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'x-api-key': DEUNA_PRIVATE_API_KEY
+        'x-api-key': DEUNA_PRIVATE_API_KEY,
+        'Authorization': 'Bearer ' + tokenUser
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({...data, order_token: tokenOrder}),
     });
 
   if (error) {
