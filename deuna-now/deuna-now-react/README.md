@@ -3,6 +3,7 @@
 ## Descripción:
 la App de react se encargada de tokenizar la orden, configurar el payment-widget, renderizar el payment widget y procesar el pago.
 
+
 Los siguientes procesos se realizan en el frontend:
 | Procesos| Frontend |  |
 | --- | --- | --- |
@@ -10,7 +11,12 @@ Los siguientes procesos se realizan en el frontend:
 | Inicializar widget-payment |  ✅  |  |
 | Procesar el pago |  ✅  |  |
 
-
+# Diagrama de Flujo 
+<br />
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/6935006/208737761-8b525835-5e8f-4e3e-aa96-45419c1ab75d.png" align="" alt="" caption="" height="auto" title="" width="auto" loading="lazy">
+</p>
+<br />
 ## Requerimientos
 
 - React
@@ -38,7 +44,15 @@ npm start
 
 <br />
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/6935006/203172738-ef8e8a60-73a7-4cb6-bf45-2bffd3310cc2.png"  alt="Vista previa" />
+    <img src="https://user-images.githubusercontent.com/6935006/208737618-70681638-7d96-4361-ad1c-4d332fd1be29.png"  alt="Vista previa" />
+</p>
+<br />
+
+4. Al hacer click en "Deuna-now" se deben renderizar los métodos de pago de tu comercio:
+
+<br />
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/6935006/208737657-40ba6592-3481-454b-8082-93e10962b741.png"  alt="Vista previa" />
 </p>
 <br />
 
