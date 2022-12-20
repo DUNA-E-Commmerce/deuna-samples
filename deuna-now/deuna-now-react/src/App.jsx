@@ -5,7 +5,7 @@ import JSONInput from "react-json-editor-ajrm";
 import locale from "react-json-editor-ajrm/locale/en";
 import listProducts from "./assets/products.png";
 import closeIcon from "./assets/closeIcon.png";
-import jsonPayload from "./payload.json";
+import jsonPayload from "./mock/payload.json";
 
 function App() {
   const [payload, setPayload] = useState(jsonPayload);
