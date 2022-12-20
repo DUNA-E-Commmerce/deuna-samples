@@ -6,13 +6,21 @@ import locale from "react-json-editor-ajrm/locale/en";
 import ListProducts from "./assets/products.png";
 import { DEUNA_PUBLIC_API_KEY } from "./config";
 import jsonPayload from "./payload.json";
+//import jsonPayload from "./payloadComplete.json";
+import "reactjs-popup/dist/index.css";
 
 function App() {
   const [payload, setPayload] = useState(jsonPayload);
+  const [showModal, setShowModal] = useState(false);
+  const [requestStatus, setRequestStatus] = useState({
+    message: "",
+    status: "idle",
+  });
   /**
    * Open modal checkout widget
    */
   const shouldOpen = async () => {
+    console.log("TOKENIZAR ORDEN");
     try {
       // tokenize order
       const response = await fetch(
@@ -32,6 +40,7 @@ function App() {
 
       const token = newResponse.token;
       if (!token) return;
+      setShowModal(true);
       // config checkout
       await window.DeunaPay.default.configure({
         apiKey: DEUNA_PUBLIC_API_KEY,
@@ -52,6 +61,21 @@ function App() {
     setPayload(data);
   };
 
+  const processPay = async () => {
+    //const { error } = await window.DeunaPay.default.
+
+    const { error } = await window.DeunaPay.default.pay({});
+
+    if (error) {
+      setRequestStatus({ message: "Hubo un error al pagar", status: "error" });
+      return;
+    }
+
+    setRequestStatus({
+      message: "Se realizó el pago satisfactoriamente",
+      status: "success",
+    });
+  };
   return (
     <div className="App">
       <JSONInput
@@ -69,7 +93,6 @@ function App() {
           alt=" DEUNA"
         />
         <img src={ListProducts} alt="cart" className="cart-list" />
-
         <button
           id="button-checkout-deuna"
           className="purchase-btn"
@@ -81,6 +104,31 @@ function App() {
           />
           Deuna-now
         </button>
+        {showModal && (
+          <>
+            <div className="modal">
+              <div style={{ height: "85vh" }} id="widget"></div>
+              <button
+                id="button-checkout-deuna"
+                className="purchase-btn"
+                onClick={processPay}
+              >
+                <img
+                  src="https://images.getduna.com/logo-full-deuna-D.svg"
+                  alt=" DEUNA"
+                />
+                Pagar
+              </button>
+              {requestStatus.status === "error" && (
+                <span style={{ color: "red" }}>{requestStatus.message}</span>
+              )}
+              {requestStatus.status === "success" && (
+                <span style={{ color: "green" }}>{requestStatus.message}</span>
+              )}
+            </div>
+            <div className="over-modal"></div>
+          </>
+        )}
       </div>
     </div>
   );
