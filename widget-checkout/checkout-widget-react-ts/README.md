@@ -30,8 +30,10 @@ Este repositorio es solamente para nuestra  <a href="https://docs.deuna.com/" st
 # Requisitos para documentación
 Si estás revisando documentación y plantillas de prueba para la integración con el widget, lo siguiente es requerido:
 
-* jsonEditor
-* [Jquery](https://jquery.com/) =3.3.1
+* [NodeJS](https://nodejs.org/en/) >=14.19.1 <=18.x.x
+* [ReactJS](https://reactjs.org/) =18.x
+* [NPM](https://nodejs.org/en/) >=6.x
+* [Yarn](https://yarnpkg.com/) >= 1.22.x
 
 # Estructura del proyecto
 
@@ -41,28 +43,32 @@ project
 │___README.md
 │
 └───widget-checkout
-    └───checkout-widget-js
-        └───dist           # recursos para ejecutar el proyecto
-        └───images
-        └───index.html     # archivo a ejecutar
-        └───config.js      # archivo de cofiguración
+    └───checkout-widget-react-ts
+        └───public           
+        └───src
+            └───assets
+            └───App.tsx            # interfaz principal
+            └───mockData.json     # payload de ejemplo   
+        └───.env                  # archivo con variables
 ```
 
-# Implementar widget con vanillaJS
+# Implementar widget con ReactJS
 
 ## Requerimientos
 
-- API key
+- APIs key
 
 ## Proceso de Instalación:
 
 1. Obtén tu llave privada [Documentación](https://docs.deuna.com/docs/api-key)
-2. Agrega la variable `DEUNA_PRIVATE_API_KEY` en el archivo config.js 
-3. Agrega la variable `ENVIRONMENT` al archivo config.js 
-4. Agrega la variable `BASE_URL` al archivo config.js 
-5. Abrir el archivo `index.html` en el navegador
+2. Agrega la variable `DEUNA_PRIVATE_API_KEY` en el archivo `.env` 
+3. Agrega la variable `ENVIRONMENT` al archivo `.env` 
+4. Agrega la variable `BASE_URL` al archivo `.env` 
+5. Ejecutar `yarn install` 
+6. Ejecutar `yarn dev`, ejecutará la aplicación en modo desarrollador.
+Abrir http://localhost:5173 en el navegador.
 
-Asegúrate de configurar estas variables en `config.js` que se  encuentra en la raíz del proyecto. Debería incluir las siguientes variables:
+Asegúrate de configurar estas variables en `.env` que deberá encontrarse en la raíz del proyecto. Debería incluir las siguientes variables:
 
 ```yaml
 # DEUNA API keys - see https://docs.deuna.com/docs/api-key

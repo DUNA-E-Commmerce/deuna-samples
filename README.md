@@ -36,10 +36,10 @@ Se requiere lo siguiente si estas revisando documentación y plantillas de prueb
 El SDK es un de kit desarrollo para poder integrar tu comercio con la plataforma de DEUNA y de esta forma gestionar al usuario en sus pagos, direcciones, tarjetas mucho mas.
 
 ## Widget checkout
-Es una interfaz grafica ya programada con todo lo necesario para ser usada de manera inmediata.
+Es una interfaz gráfica ya programada con todo lo necesario para ser usada de manera inmediata.
 
 
-## Merchant api
+## Merchant API
 on un conjunto de API REST de tipo POST, PATCH, y DELETE que permitirá comunicar bidireccionalmente tu servidor del comercio donde está el modelo de negocio con el servidor de DEUNA donde están guardadas las configuraciones previamente realizadas en el Admin del comercio.
 
 # Estructura del proyecto
