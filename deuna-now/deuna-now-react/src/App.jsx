@@ -143,7 +143,7 @@ function App() {
                 </span>
               )}
               {requestStatus.status !== "success" && (
-                <div style={{ height: "70vh" }} id="widget"></div>
+                <div className="widget-container" id="widget"></div>
               )}
 
               <button

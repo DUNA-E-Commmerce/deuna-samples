@@ -57,7 +57,7 @@
   display:  'flex';
   flex-direction: column;
   left: 50%;
-  max-height: 80vh;
+  max-height: 90vh;
   max-width:  500 px;
   padding: 20px 20px 50px;
   position: fixed;
@@ -105,4 +105,9 @@
   color: black;
   display: flex;
   justify-content: center;
+}
+
+.widget-container{
+  height:70vh;
+  overflow: scroll
 }
