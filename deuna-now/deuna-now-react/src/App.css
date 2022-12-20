@@ -78,3 +78,31 @@
   width: 100vw;
   z-index: 20;
 }
+
+.icon-container{
+  display: flex;
+  justify-content: end;
+  margin-right: 20px;
+}
+
+.error-message{
+  color:red;
+  font-size: 24px;
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+}
+
+.success-message{
+  color:green;
+  font-size: 24px;
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+}
+
+.loading-message{
+  color: black;
+  display: flex;
+  justify-content: center;
+}
