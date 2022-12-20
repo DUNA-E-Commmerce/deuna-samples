@@ -5,7 +5,6 @@ import JSONInput from "react-json-editor-ajrm";
 import locale from "react-json-editor-ajrm/locale/en";
 import listProducts from "./assets/products.png";
 import closeIcon from "./assets/closeIcon.png";
-import { DEUNA_PUBLIC_API_KEY, ENVIRONMENT } from "./config";
 import jsonPayload from "./payload.json";
 
 function App() {
@@ -36,7 +35,7 @@ function App() {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            "x-api-key": DEUNA_PUBLIC_API_KEY,
+            "x-api-key": `${process.env.REACT_APP_PUBLIC_API_KEY_DEUNA}`,
           },
           body: JSON.stringify(payload),
         }
@@ -57,9 +56,9 @@ function App() {
 
       // config checkout
       await window.DeunaPay.default.configure({
-        apiKey: DEUNA_PUBLIC_API_KEY,
+        apiKey: `${process.env.REACT_APP_PUBLIC_API_KEY_DEUNA}`,
         orderToken: token,
-        env: ENVIRONMENT,
+        env: `${process.env.REACT_APP_ENVIRONMENT}`,
       });
 
       // render widget-payment
