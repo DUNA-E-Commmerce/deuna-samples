@@ -23,8 +23,8 @@ Los siguientes procesos se realizan en el frontend:
 
 ```yaml
 # DEUNA API keys - see https://docs.deuna.com/docs/api-key
-DEUNA_PUBLIC_API_KEY= <Reemplazar con tu llave pública>
-URL_SERVICES= <Reemplazar con la Dirección donde este corriendo tu servico de backend ejemplo https://localhost:3001>
+REACT_APP_PUBLIC_API_KEY_DEUNA= <Reemplazar con tu llave pública>
+REACT_APP_URL_SERVICES = <Reemplazar con la Dirección donde este corriendo tu servico de backend ejemplo https://localhost:3001>
 ```
 
 2. Instalar Dependencias y correr el servidor.
