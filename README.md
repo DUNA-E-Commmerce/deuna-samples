@@ -38,6 +38,8 @@ El SDK es un de kit desarrollo para poder integrar tu comercio con la plataforma
 ## Widget checkout
 Es una interfaz gráfica ya programada con todo lo necesario para ser usada de manera inmediata.
 
+## Deuna Now
+Disponibiliza un abanico creciente de métodos de pago (tarjetas, BNPL, etc.) para ofrecer la máxima flexibilidad de pagos. Interactua con el UI del merchant.
 
 ## Merchant API
 on un conjunto de API REST de tipo POST, PATCH, y DELETE que permitirá comunicar bidireccionalmente tu servidor del comercio donde está el modelo de negocio con el servidor de DEUNA donde están guardadas las configuraciones previamente realizadas en el Admin del comercio.
@@ -61,4 +63,8 @@ project
     └───checkout-widget-js
     └───checkout-widget-react
     └───checkout-widget-react-ts
+│
+└───deuna-now
+    └───deuna-now-js
+    └───deuna-now-react
 ```

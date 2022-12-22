@@ -1,3 +1,18 @@
+<br />
+<p align="center">
+  <a href="https://deuna.com/">
+    <img src="https://files.readme.io/e32846c-small-logodeve.png" width="318px" alt="deuna logo" />
+  </a>
+</p>
+
+<h2 align="center">Deuna Now</h2>
+<p align="center">Disponibiliza un abanico creciente de métodos de pago (tarjetas, BNPL, etc.) para ofrecer la máxima flexibilidad de pagos. Interactua con el UI del merchant.</p>
+<br />
+<p align="center">
+Este repositorio es solamente para nuestra  <a href="https://docs.deuna.com/" style="color: #f50;">documentación</a>.👌
+</p>
+<br />
+
 # Implementación de DEUNA-NOW con react.js
 
 ## Descripción:
