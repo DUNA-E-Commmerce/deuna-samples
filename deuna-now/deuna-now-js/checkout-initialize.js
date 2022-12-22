@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   })
 
   bodyBlackout.addEventListener('click', () => {
-    // TODO: Turn into a function to close modal
     popupModal.classList.remove('is--visible')
     bodyBlackout.classList.remove('is-blacked-out')
   })
@@ -36,7 +35,7 @@ const shouldOpen = async () => {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'x-api-key': DEUNA_PRIVATE_API_KEY
+        'x-api-key': DEUNA_PUBLIC_API_KEY
       },
       body: JSON.stringify(data),
     });
@@ -44,9 +43,9 @@ const shouldOpen = async () => {
     // Configure checkout
     tokenOrder = newResponse.token;
     await window.DeunaPay.default.configure({
-      apiKey: DEUNA_PRIVATE_API_KEY,
+      apiKey: DEUNA_PUBLIC_API_KEY,
       orderToken: newResponse.token,
-      env: "staging",
+      env: ENVIRONMENT,
     });
     
     await window.DeunaPay.default.renderWidget({ target: "#root" });
@@ -61,6 +60,9 @@ const shouldOpen = async () => {
   }
 };
 
+/**
+ * pay
+ */
 const handlePay = async () => {
   const { data, error } = await window.DeunaPay.default.pay();
   const message = document.querySelector('.message')
