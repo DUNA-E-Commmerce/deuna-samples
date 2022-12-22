@@ -65,22 +65,22 @@ const editor = new JsonEditor("#json-display", {
       },
     ],
     billing_address: {
-      first_name: "Cristhian",
-      last_name: "Laurente",
+      first_name: "Juan",
+      last_name: "Duarte",
       phone: "+51992248719",
       identity_document: "1111111111",
       lat: -0.1602236,
       lng: -78.49664,
-      address1: "Av. del Parque, Quito 170132, Ecuador",
-      address2: "12",
+      address1: "Av. del Parque, Quito 130152, Ecuador",
+      address2: "20",
       city: "Quito",
-      zipcode: "170132",
+      zipcode: "130152",
       state_name: "Pichincha",
       state_code: "PICHINCHA",
       country: "EC",
       additional_description: "12",
       address_type: "home",
-      email: "ijuarez@deuna.com"
+      email: "test@gmail.com"
     },
     discounts: [
       {
@@ -102,7 +102,7 @@ const editor = new JsonEditor("#json-display", {
     shipping_address: {
       id: 0,
       user_id: "",
-      first_name: "Melvin",
+      first_name: "Roberto",
       last_name: "Rosales",
       phone: "3222222229",
       identity_document: "",
@@ -111,7 +111,7 @@ const editor = new JsonEditor("#json-display", {
       address1: "Piramide del Sol",
       address2: "boom",
       city: "New Mexico",
-      zipcode: "31231",
+      zipcode: "1456667",
       state_name: "Hola",
       country_code: "MX",
       country: "MX",
@@ -225,6 +225,6 @@ const payEditor = new JsonEditor("#json-display-pay", {
     method_type: "cash",
     order_token: "f2d801b3-4a11-4a53-b48c-8c0d8e04a777",
     amount: 1000,
-    email: "aaaa@deuna.com",
+    email: "aaaa@gmail.com",
     not_sync_payment: true
 });

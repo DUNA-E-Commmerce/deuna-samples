@@ -14,15 +14,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 })
 
 /**
- * Order tokenization
- * @param object order - Order data
- * @return string token
- */
-
-// Initialize checkout
-//const dunaCheckout = window.DeunaCheckout();
-
-/**
  * Open modal checkout widget
  */
 let tokenUser;
