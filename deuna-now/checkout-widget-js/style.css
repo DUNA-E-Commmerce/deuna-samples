@@ -61,7 +61,7 @@ html {
 
 .popup-modal {
   height: 565px;
-  width: 70%;
+  width: 400px;
   background-color: #fff;
   position: absolute;
   left: 50%;
@@ -106,8 +106,7 @@ html {
   height: 400px;
   display: inline-block;
   overflow: auto;
-  width: 50%;
-  float: right;
+  width: 100%;
 }
 
 h3 {
@@ -119,4 +118,17 @@ pre#json-display-pay {
   overflow: auto;
   width: 49%;
   display: inline-block;
+}
+
+.message {
+  width: 100%;
+  margin: 20px  0;
+}
+
+.message.error {
+  color: red;
+}
+
+.message.success {
+  color: green;
 }

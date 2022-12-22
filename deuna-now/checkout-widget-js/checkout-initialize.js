@@ -56,52 +56,21 @@ const shouldOpen = async () => {
     popupModal.classList.add('is--visible')
     bodyBlackout.classList.add('is-blacked-out')
 
-          const response2 = await fetch(`https://api.stg.deuna.io/users/login?type=guest`, {
-      method: "POST",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'x-api-key': DEUNA_PRIVATE_API_KEY,
-      },
-      body: JSON.stringify({
-        "user_id": "a22fcee2-bc37-4237-9ea4-6cc391705898"
-      }),
-    });
-
-    const newResponse2 = await response2.json();
-    tokenUser = newResponse2.token; 
-    console.log(newResponse2.token)
-    /*await dunaCheckout.configure({
-      env: ENVIRONMENT,
-      apiKey: DEUNA_PRIVATE_API_KEY,
-      orderToken: newResponse.body.token,
-    });
-    await dunaCheckout.show();*/
   } catch (error) {
     alert(error);
   }
 };
 
 const handlePay = async () => {
-    const data = payEditor.get();
-
-
-    await fetch(`https://api.stg.deuna.io/merchants/transactions/purchase`, {
-      method: "POST",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'x-api-key': DEUNA_PRIVATE_API_KEY,
-        'Authorization': 'Bearer ' + tokenUser
-      },
-      body: JSON.stringify({...data, order_token: tokenOrder}),
-    });
+  const { data, error } = await window.DeunaPay.default.pay();
+  const message = document.querySelector('.message')
 
   if (error) {
-    setRequestStatus({ message: 'Hubo un error al pagar', status: 'error' })
+    message.innerHTML = 'Hubo un error al pagar';
+    message.classList.add('error')
     return;
   }
 
-  console.log(data)
-  setRequestStatus({ message: 'Se realizó el pago satisfactoriamente', status: 'success' })
+  message.innerHTML = 'Se realizó el pago satisfactoriamente';
+  message.classList.add('success')
 };

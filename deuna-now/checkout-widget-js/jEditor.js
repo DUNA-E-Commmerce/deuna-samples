@@ -64,6 +64,24 @@ const editor = new JsonEditor("#json-display", {
         discounts: [],
       },
     ],
+    billing_address: {
+      first_name: "Cristhian",
+      last_name: "Laurente",
+      phone: "+51992248719",
+      identity_document: "1111111111",
+      lat: -0.1602236,
+      lng: -78.49664,
+      address1: "Av. del Parque, Quito 170132, Ecuador",
+      address2: "12",
+      city: "Quito",
+      zipcode: "170132",
+      state_name: "Pichincha",
+      state_code: "PICHINCHA",
+      country: "EC",
+      additional_description: "12",
+      address_type: "home",
+      email: "ijuarez@deuna.com"
+    },
     discounts: [
       {
         amount: 50,
