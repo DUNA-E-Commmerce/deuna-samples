@@ -1,0 +1,32 @@
+{
+  "order_type": "DEUNA_NOW",
+  "order": {
+    "order_id": "ID-12332222",
+    "currency": "USD",
+    "store_code": "all",
+    "timezone": "America/Mexico_City",
+    "tax_amount": 10,
+    "shipping_amount": 10,
+    "items_total_amount": 299,
+    "sub_total": 299,
+    "total_amount": 2990,
+    "billing_address": {
+      "first_name": "name",
+      "last_name": "lastName",
+      "phone": "+52617014458",
+      "identity_document": "1111111111",
+      "lat": 25.539260206692635,
+      "lng": -103.46132558827024,
+      "address1": "Av Morelos 1157, Primitivo Centro, Torreón, Coah., Mexico",
+      "address2": "Av Morelos 1157, Primitivo Centro, Torreón, Coah., Mexico",
+      "city": "Torreón",
+      "zipcode": "--",
+      "state_name": "Coahuila de Zaragoza",
+      "state_code": "COAH",
+      "country": "MX",
+      "additional_description": "",
+      "address_type": "home",
+      "email": "test123@gmail.com"
+    }
+  }
+}
