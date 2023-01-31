@@ -68,3 +68,17 @@
     transform: rotate(360deg);
   }
 }
+
+.text{
+  font-size: 14px;
+  color: black;
+}
+
+.container-information{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:10px;
+  height:25px;
+}

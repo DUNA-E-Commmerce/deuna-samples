@@ -42,19 +42,20 @@ Para este ejemplo se utilizará react para el frontend.
 
 ```yaml
 # DEUNA API keys - see https://docs.deuna.com/docs/api-key
-DEUNA_PUBLIC_API_KEY= <Reemplazar con tu llave pública>
-ENVIRONMENT=<staging|production>
-BASE_URL= <Reemplazar con la Dirección externa donde se va tokenizar la orden>
+VITE_DEUNA_PUBLIC_API_KEY= <Reemplazar con tu llave pública>
+VITE_ENVIRONMENT=<staging|production>
 ```
 
-2. Instalar Dependencias y correr el servidor.
+2. Modificar el `order_id`  con un valor aleatorio, ya sea en el archivo `mockOrder.json` o antes de tokenizar la orden en la interfaz.
+
+3. Instalar Dependencias y correr el servidor.
 
 ```
-yarn install
+yarn
 yarn dev
 ```
 
-3. Abrir [http://localhost:5173](http://localhost:5173) en tu navegador de internet:
+4. Abrir [http://localhost:5173](http://localhost:5173) en tu navegador de internet:
 
 <br />
 <p align="center">
