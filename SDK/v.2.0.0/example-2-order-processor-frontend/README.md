@@ -12,7 +12,7 @@ Para este ejemplo se utilizará react para el frontend.
 
 # Descripción
 
-| Procesos| Frontend | Servicio externo |
+| Procesos| Frontend | Servicio DEUNA |
 | --- | --- | --- |
 | Inicializar checkout |  ✅  |  |
 | Generar payload para tokenizar la orden |  ✅  |  |
@@ -24,7 +24,7 @@ Para este ejemplo se utilizará react para el frontend.
 # Diagrama de Flujo 
 <br />
 <p align="center">
-    <img src="https://files.readme.io/a53926a-ejemplo_2_sdk.png" align="" alt="" caption="" height="auto" title="" width="auto" loading="lazy">
+    <img src="https://files.readme.io/d53fc1a-Flujos_MerchantAPI_y_CheckoutAPI_-_Flujos_metodos_SDK__2.png" align="" alt="" caption="" height="auto" title="" width="auto" loading="lazy">
 </p>
 <br />
 

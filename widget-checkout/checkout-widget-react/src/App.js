@@ -13,41 +13,46 @@ function App() {
    */
   const shouldOpen = async () => {
     // Initialize checkout
-   const dunaCheckout = window.DeunaCheckout();
+    const dunaCheckout = window.DeunaCheckout();
     try {
-      const response = await fetch(`${process.env.BASE_URL}/tokenizeOrder`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BASE_URL}/tokenizeOrder`,
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       const newResponse = await response.json();
 
       if (!newResponse.body.token) return;
 
       // Configure checkout
       await dunaCheckout.configure({
-        env: process.env.ENVIRONMENT,
-        apiKey: process.env.DEUNA_PRIVATE_API_KEY,
+        env: process.env.REACT_APP_ENVIRONMENT,
+        apiKey: process.env.REACT_APP_DEUNA_PRIVATE_API_KEY,
         orderToken: newResponse.body.token,
       });
 
       await dunaCheckout.show();
-    } catch (error) {console.error(error)}
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
     <div className="App">
-    <JSONInput
-      id={1}
-      placeholder={data}
-      onChange={(event) => setData(event.jsObject)}
-      locale={locale}
-      height="100vh"
-      width="70vw"
-    />
+      <JSONInput
+        id={1}
+        placeholder={data}
+        onChange={(event) => setData(event.jsObject)}
+        locale={locale}
+        height="100vh"
+        width="70vw"
+      />
       <div className="shopping-cart">
         <img
           className="brand"
