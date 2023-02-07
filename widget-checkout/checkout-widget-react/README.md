@@ -60,18 +60,16 @@ project
 ## Proceso de Instalación:
 
 1. Obtén tu llave privada [Documentación](https://docs.deuna.com/docs/api-key)
-2. Agrega la variable `DEUNA_PRIVATE_API_KEY` en el archivo `.env` 
-3. Agrega la variable `ENVIRONMENT` al archivo `.env` 
-4. Agrega la variable `BASE_URL` al archivo `.env` 
-5. Ejecutar `npm install` o `yarn install` 
-6. Ejecutar `npm start`, ejecutará la aplicación en modo desarrollador.
-Abrir http://localhost:3000 en el navegador.
-
-Asegúrate de configurar estas variables en `.env` que deberá encontrarse en la raíz del proyecto. Debería incluir las siguientes variables:
+2. Establecer las variables de entorno en el archivo `.env`, en el repositorio encontraras el archivo `.env.sample` como ejemplo. El `.env` debe contener la siguiente información:
 
 ```yaml
 # DEUNA API keys - see https://docs.deuna.com/docs/api-key
-DEUNA_PRIVATE_API_KEY=""00cdd7f62063c..."
-ENVIRONMENT= "Staging..."
-BASE_URL= "https://localhost:3000..."
+REACT_APP_PUBLIC_API_KEY_DEUNA=""00cdd7f62063c..."
+REACT_APP_BASE_URL= "staging..."
+REACT_APP_BASE_URL= "servicio de backend para tokenizar la orden"
 ```
+
+3. Ejecutar `npm install` 
+4. Ejecutar `npm start`, ejecutará la aplicación en modo desarrollador.
+Abrir http://localhost:3000 en el navegador.
+5. Modificar el `order_id`  con un valor aleatorio, ya sea en el archivo `jEditor.js` o antes de tokenizar la orden en la interfaz. 

@@ -60,7 +60,8 @@ project
 2. Agrega la variable `DEUNA_PRIVATE_API_KEY` en el archivo config.js 
 3. Agrega la variable `ENVIRONMENT` al archivo config.js 
 4. Agrega la variable `BASE_URL` al archivo config.js 
-5. Abrir el archivo `index.html` en el navegador
+5. Modificar el `order_id`  con un valor aleatorio, ya sea en el archivo `jEditor.js` o antes de tokenizar la orden en la interfaz. 
+6. Abrir el archivo `index.html` en el navegador
 
 Asegúrate de configurar estas variables en `config.js` que se  encuentra en la raíz del proyecto. Debería incluir las siguientes variables:
 

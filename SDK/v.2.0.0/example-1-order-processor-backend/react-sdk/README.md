@@ -27,14 +27,16 @@ REACT_APP_PUBLIC_API_KEY_DEUNA= <Reemplazar con tu llave pública>
 REACT_APP_URL_SERVICES = <Reemplazar con la Dirección donde este corriendo tu servico de backend ejemplo https://localhost:3001>
 ```
 
-2. Instalar Dependencias y correr el servidor.
+2. Modificar el `order_id`  con un valor aleatorio, ya sea en el archivo `orderPayload.json` o antes de tokenizar la orden en la interfaz. 
+
+3. Instalar Dependencias y correr el servidor.
 
 ```
 npm install
 npm start
 ```
 
-3. Abrir [http://localhost:3000](http://localhost:3000) en tu navegador de internet:
+4. Abrir [http://localhost:3000](http://localhost:3000) en tu navegador de internet:
 
 <br />
 <p align="center">

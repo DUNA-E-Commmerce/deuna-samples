@@ -6,42 +6,60 @@ import locale from "react-json-editor-ajrm/locale/en";
 import MockOrder from "./mocks/mockOrder.json";
 import MockPayment from "./mocks/mockPayment.json";
 import ListProducts from "./assets/products.png";
-import { Checkout } from "@deuna/checkout-sdk"
+import { Checkout } from "@deuna/checkout-sdk";
+import { CircleWithCheckIcon } from "./assets/check.icon";
+import { CircleWithErrorIcon } from "./assets/error.icon";
 
 function App() {
- 
   const [orderData, setOrderData] = useState(MockOrder);
   const [paymentData, setPaymentData] = useState(MockPayment);
+  const [showCheckTokenizedOrder, setShowCheckTokenizedOrder] = useState(false);
+  const [showCheckPaymentProcessed, setShowCheckPaymentProcessed] =
+    useState(false);
   /**
    * Open modal checkout widget
    */
   const shouldOpen = async () => {
     // Initialize checkout
-    console.log(orderData)
     try {
-      const response = await fetch(`${process.env.BASE_URL}/tokenizeOrder`, {
+      const response = await fetch(import.meta.env.VITE_BASE_URL, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
+          "X-API-KEY": import.meta.env.VITE_DEUNA_PUBLIC_API_KEY,
         },
         body: JSON.stringify(orderData),
       });
       const newResponse = await response.json();
 
-      if (!newResponse.body.token) return;
-
+      if (!newResponse.token) return;
+      setShowCheckTokenizedOrder(true);
       const checkout = await Checkout.init({
-       publicApiKey: process.env.DEUNA_PUBLIC_API_KEY,
-        env: process.env.ENVIRONMENT,
-        orderToken: newResponse.body.token,
-      })
+        publicApiKey: import.meta.env.VITE_DEUNA_PUBLIC_API_KEY,
+        env: import.meta.env.VITE_ENVIRONMENT,
+        orderToken: newResponse.token,
+      });
 
       await checkout.getPaymentMethods();
-      
-      checkout.pay(paymentData).then(res=> console.log(res))
 
-    } catch (error) {console.error(error)}
+      checkout.pay(paymentData).then((res) => console.log(res));
+      setShowCheckPaymentProcessed(true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const changeOrderPayload = (e) => {
+    setOrderData(e.jsObject);
+    setShowCheckPaymentProcessed(false);
+    setShowCheckTokenizedOrder(false);
+  };
+
+  const changePayPayload = (e) => {
+    setPaymentData(e.jsObject);
+    setShowCheckPaymentProcessed(false);
+    setShowCheckTokenizedOrder(false);
   };
 
   return (
@@ -51,7 +69,7 @@ function App() {
         <JSONInput
           id="1"
           placeholder={orderData}
-          onChange={(event) => setOrderData(event.jsObject)}
+          onChange={(event) => changeOrderPayload(event)}
           locale={locale}
           height="43vh"
           width="100%"
@@ -60,7 +78,7 @@ function App() {
         <JSONInput
           id="2"
           placeholder={paymentData}
-          onChange={(event) => setPaymentData(event.jsObject)}
+          onChange={(event) => changePayPayload(event)}
           locale={locale}
           height="43vh"
           width="100%"
@@ -85,6 +103,22 @@ function App() {
           />
           Checkout
         </button>
+        <div className="container-information">
+          {showCheckTokenizedOrder ? (
+            <CircleWithCheckIcon />
+          ) : (
+            <CircleWithErrorIcon />
+          )}
+          <p className="text"> Get tokenized order</p>
+        </div>
+        <div className="container-information">
+          {showCheckPaymentProcessed ? (
+            <CircleWithCheckIcon />
+          ) : (
+            <CircleWithErrorIcon />
+          )}
+          <p className="text"> Payment processed</p>
+        </div>
       </div>
     </div>
   );
