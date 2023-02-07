@@ -44,6 +44,7 @@ Para este ejemplo se utilizará react para el frontend.
 # DEUNA API keys - see https://docs.deuna.com/docs/api-key
 VITE_DEUNA_PUBLIC_API_KEY= <Reemplazar con tu llave pública>
 VITE_ENVIRONMENT=<staging|production>
+VITE_BASE_URL=<Servicio para tokenizar orden>, puedes usar el servicio de DEUNA "https://api.stg.deuna.io/merchants/orders"
 ```
 
 2. Modificar el `order_id`  con un valor aleatorio, ya sea en el archivo `mockOrder.json` o antes de tokenizar la orden en la interfaz.

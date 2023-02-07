@@ -22,18 +22,15 @@ function App() {
   const shouldOpen = async () => {
     // Initialize checkout
     try {
-      const response = await fetch(
-        `https://api.stg.deuna.io/merchants/orders`,
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            "X-API-KEY": import.meta.env.VITE_DEUNA_PUBLIC_API_KEY,
-          },
-          body: JSON.stringify(orderData),
-        }
-      );
+      const response = await fetch(import.meta.env.VITE_BASE_URL, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "X-API-KEY": import.meta.env.VITE_DEUNA_PUBLIC_API_KEY,
+        },
+        body: JSON.stringify(orderData),
+      });
       const newResponse = await response.json();
 
       if (!newResponse.token) return;
