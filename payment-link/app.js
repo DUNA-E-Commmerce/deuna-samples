@@ -1,4 +1,9 @@
-document.addEventListener("DOMContentLoaded", function (event) {});
+document.addEventListener("DOMContentLoaded", function (event) {
+  const paymentLinkButton = document.getElementById(
+    "deuna_payment-link-button"
+  );
+  paymentLinkButton.addEventListener("click", shouldOpen);
+});
 
 /**
  * Tokenize a payment_link order
