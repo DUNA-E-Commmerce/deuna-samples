@@ -10,6 +10,6 @@ La integración del DEUNA Payment Link es un proceso sencillo, altamente persona
 
 1. Cambiar `apiKey` y `OrderToken` en tu archivo `app.js`.
 2. Abrir `index.html` en tu navegador.
-3. Recuerda jugar con los checkout_modules, adicionando los módulos que necesites para tu solución de pago.
+3. Recuerda jugar con los `checkout_modules`, adicionando los módulos que necesites para tu solución de pago.
 
 Con estos sencillos pasos puedes crear tu Link de pagos y simular una compra con DEUNA Payment Link.
