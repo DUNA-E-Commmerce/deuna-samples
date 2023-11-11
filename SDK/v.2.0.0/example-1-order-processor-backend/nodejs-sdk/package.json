@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@deuna/checkout-sdk": "^2.0.4-rc-0",
-    "axios": "^1.1.3",
+    "axios": "^1.6.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
