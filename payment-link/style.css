@@ -1,0 +1,125 @@
+body,
+html {
+  margin: 0;
+}
+.demo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+.brand {
+  width: 180px;
+  margin: 0 auto;
+  display: block;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  width: 30vw;
+}
+
+.checkout-btn {
+  width: 250px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #221f20;
+  border: none;
+  color: white;
+  font-size: 20px;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.checkout-btn:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+.btn-text {
+  display: inline-block;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 45%;
+  transform: translate(-50%, -50%);
+  display: none;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.checkout-btn.loading .btn-text {
+  display: none;
+}
+
+.checkout-btn.loading .loader {
+  display: block;
+}
+
+#json-input {
+  display: block;
+  width: 100%;
+  height: 200px;
+}
+
+#json-display {
+  border: 1px solid #000;
+  margin: 20px 0;
+  padding: 10px 20px;
+  height: 97vh;
+  overflow-y: scroll;
+  width: 70vw;
+}
+
+#root {
+  height: 400px;
+  display: inline-block;
+  overflow: auto;
+  width: 100%;
+}
+
+h3 {
+  margin: 0;
+}
+
+pre#json-display-pay {
+  height: 400px;
+  overflow: auto;
+  width: 49%;
+  display: inline-block;
+}
+
+.message {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.message.error {
+  color: red;
+}
+
+.message.success {
+  color: green;
+}

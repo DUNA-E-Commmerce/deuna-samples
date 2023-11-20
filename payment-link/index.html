@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Payment Link</title>
+    <!--Add the script named Cross Domain Login -->
+    <script src="./dist/jquery-3.3.1.min.js"></script>
+    <script src="./dist/jquery.json-editor.min.js"></script>
+
+    <script src="https://cdn.getduna.com/cdl/index.js"></script>
+
+    <!--Config variables -->
+    <script src="config.js"></script>
+    <!--Initialize and show checkout-widget -->
+    <script src="app.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="body-blackout"></div>
+
+    <div class="demo-container">
+      <pre id="json-display"></pre>
+      <div class="container">
+        <!-- Open button checkout widget -->
+        <button id="deuna_payment-link-button" class="checkout-btn">
+          <span class="btn-text">Payment Link</span>
+          <div class="loader"></div>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="jEditor.js"></script>
+</html>
