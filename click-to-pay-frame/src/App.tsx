@@ -24,6 +24,7 @@ declare global {
 }
 const App = () => {
   const [formData, setFormData] = useState({
+    apiKey: "",
     nombre: "",
     apellido: "",
     email: "",
@@ -40,10 +41,10 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { nombre, apellido, email } = formData;
+    const { nombre, apellido, email, apiKey } = formData;
     console.log(nombre, apellido, email);
 
-    const enlace = `https://www.ejemplo.com/?nombre=${nombre}&apellido=${apellido}&email=${email}`;
+    const enlace = `https://elements.stg.deuna.io/click_to_pay?publicApiKey=${apiKey}&nombre=${nombre}&apellido=${apellido}&email=${email}`;
     setIframeUrl(enlace);
   };
 
@@ -73,6 +74,16 @@ const App = () => {
         </div>
       )}
       <form onSubmit={handleSubmit} className="formulario">
+        <div className="campo">
+          <label htmlFor="apiKey">API Key:</label>
+          <input
+            type="text"
+            id="apiKey"
+            name="apiKey"
+            value={formData.apiKey}
+            onChange={handleInputChange}
+          />
+        </div>
         <div className="campo">
           <label htmlFor="nombre">Nombre:</label>
           <input
